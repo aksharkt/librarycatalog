@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Catalog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .book {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            width: calc(33.33% - 20px);
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .book img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Library Catalog</h1>
+    </header>
+    <div class="container">
+        <div class="book" data-url="https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird">
+            <a href="https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird" target="_blank">
+                <img src="book1.jpg" alt="Book 1">
+                <h2>To Kill a To_Kill_a_Mockingbird</h2>
+            </a>
+        </div>
+        <div class="book" data-url="https://en.wikipedia.org/wiki/Thus_Spoke_Zarathustra">
+            <a href="https://en.wikipedia.org/wiki/Thus_Spoke_Zarathustra" target="_blank">
+                <img src="book2.jpg" alt="Book 2">
+                <h2>Thus Spoke Zarathustra</h2>
+       
+            </a>
+        </div>
+        <div class="book" data-url="https://en.wikipedia.org/wiki/Concrete_Mathematics">
+            <a href="https://en.wikipedia.org/wiki/Concrete_Mathematics" target="_blank">
+                <img src="book3.png" alt="Book 3">
+                <h2>Concrete_Mathematics</h2>
+            
+            </a>
+        </div>
+   
+    </div>
+
+    <script>
+        const bookElements = document.querySelectorAll('.book');
+        bookElements.forEach(book => {
+            book.addEventListener('click', () => {
+                const url = book.getAttribute('data-url');
+                if (url) {
+                    window.location.href = url;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
